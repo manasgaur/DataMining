@@ -1,0 +1,9 @@
+Association rule mining for the Movie data set
+10
+Supp Conf  Rule
+User 0: [], {"Captain America":1.000, "Non-Stop":1.000, "The Wolf of Wall Street":1.000}
+User 1: [], {"Non-Stop":1.000, "300 Rise of an Empire":1.000, "THOR":1.000}
+User 2: [], {"Captain America":1.000, "Frozen":1.000}
+User 3: [], {"Captain America":1.000, "Non-Stop":1.000, "300 Rise of an Empire":1.000}
+User 4: [], {"Captain America":1.000, "The Wolf of Wall Street":1.000, "Frozen":1.000}
+User 5: [], {"Non-Stop":1.000, "The Wolf of Wall Street":1.000}

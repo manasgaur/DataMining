@@ -1,0 +1,15 @@
+README
+
+Some information about the Quiz file
+
+1. I have created two classifier in order to compare them
+a. Logistic Regression
+b. Support Vector Machine
+
+2. Logistic Regression classifier is in "Quiz_DM_LogR_classifier.py" with its Pickle (.pkl) is in the folder PKL_file_classifier with the name "trained_LogR_classifier.pkl".
+
+3. Support Vector Machine classifier is in "Quiz_DM_SVM_classifier.py" with its Pickle (.pkl) is in the folder PKL_file_classifier with the name "trained_SVM_classifier.pkl".
+
+4. In order to execute the python code "Quiz_DM_LogR_classifier.py" and "Quiz_DM_SVM_classifier.py", make changes in the "PATH" of the twitter text files.
+
+For any queries contact me : mgaur@albany.edu

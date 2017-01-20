@@ -1,0 +1,4 @@
+{u'right': 0, u'love': 1, u'dont': 2, u'just': 3, u"don't": 4, u'feel': 5, u'twitter': 6, u"didn't": 7, u'fuck': 8, u'sad': 9, u'sleep': 10, u'want': 11, u'need': 12, u'home': 13, u'miss': 14, u'really': 15, u"it's": 16, u'make': 17, u'lol': 18, u'going': 19, u'new': 20, u'hope': 21, u'happy': 22, u'...': 23, u'good': 24, u'night': 44, u'gonna': 26, u'hate': 27, u'know': 28, u'got': 29, u'&amp;': 30, u'come': 31, u'day': 32, u'wait': 33, u'great': 34, u'like': 35, u'getting': 36, u'did': 37, u'wish': 38, u'work': 39, u'days': 40, u'having': 47, u'bad': 42, u'today': 43, u'time': 25, u"i'm": 45, u'wanna': 46, u'think': 41, u"can't": 48}
+[0 0 0 ..., 0 0 0]
+
+Among the total 2500 tweets, 152 tweets are predicted as positive.

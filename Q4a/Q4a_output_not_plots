@@ -1,0 +1,17 @@
+/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7 /Users/manasgaur/Desktop/MyApp/Multiprocessing/HW-4.py
+L: 288
+R: 288
+B: 49
+3.0
+rows: 625
+cols: 1
+median of left balance 8.0
+median of right balance 8.0
+standard deviation of left balance 6.32455532034
+standard deviation of right balance 6.32455532034
+minimum element in left balance 1.0
+maximum element in left balance 25.0
+minimum element in right balance 1.0
+maximum element in right balance 25.0
+median absolute deviation for left balance 4.0
+median absolute deviation for right balance 4.0

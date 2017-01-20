@@ -1,0 +1,194 @@
+import json
+import sys
+import time
+from twython import Twython, TwythonError
+import pattern.en
+
+# Optionally accept user data from the command line (or elsewhere).
+#
+# Usage:  follow_user.py ryanmcgrath
+
+
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
+#if len(sys.argv) >= 2:
+  #  target = sys.argv[1]
+#else:
+  #  target = raw_input("User to follow: ")
+    # For Python 3.x use: target = input("User to follow: ")
+
+# Requires Authentication as of Twitter API v1.1
+twitter = Twython('PeH7lROp4ihy4QyK87FZg', \
+                  '1BdUkBd9cQK6JcJPll7CkDPbfWEiOyBqqL2KKwT3Og', \
+                  '1683902912-j3558MXwXJ3uHIuZw8eRfolbEGrzN1zQO6UThc7', \
+                  'e286LQQTtkPhzmsEMnq679m7seqH4ofTDqeArDEgtXw')
+
+def print_info(tweet):
+   ''' print '***************************'
+    print 'Tweet ID: ', tweet['id']
+    print 'Post Time: ', tweet['created_at']
+    print 'User Name: ', tweet['user']['screen_name']
+    print 'Tweet Text:', tweet['text']
+    '''
+   with open('HW3-B.txt','a') as f:
+
+        f.write('\n')
+        f.write(tweet['created_at'])
+        f.write('\n')
+        f.write(tweet['user']['screen_name'])
+        f.write('\n')
+        f.write(tweet['text'])
+        f.write('\n')
+    #if 'crime' in tweet['text']:
+     #   M = M+1
+    #if 'crime' in tweet['text']:
+      #  if 'crime increased' or 'increased crime' in tweet['text']:
+        #    A = A+1
+    #print M
+   # print "\n"
+    #print A
+
+data=dict()
+def rest_query_ex1():
+    geo = '42.6525,-73.7572,15mi'#geo = ('42.6525', '-73.7572', '9mi')
+    raw_tweets = twitter.search(count=1000,geocode=geo)
+    #print_info(raw_tweets)
+    #for raw_tweet in raw_tweets:
+    #    tweet = json.loads(str(raw_tweet))
+    #    print_info(tweet)
+    for i,v in enumerate(raw_tweets['statuses']):
+       # print i
+        data=v
+        with open('tweet_text.txt','a') as f:
+            f.write(data['text'])
+            f.write('\n')
+#(home OR office OR street OR lane OR hotel OR mall OR room OR vehicle) OR \
+
+data2=dict() # this will give me N
+
+def rest_query_ex2():
+    N=0
+    M=0
+    A=0
+    C=0
+    B=0
+    max_id=-1L
+    min_id= 1L
+    since_id=None
+    count2=0
+    total_tweets=0
+    print  "\n"
+    print 'Data for N'
+    print "\n"
+    for i in range(10):
+        id_list=[]
+        query = 'crime OR domestic abuse OR kidnapping OR \
+                 murder OR rape OR robbery OR assault OR terrorism AND \
+                 (State Policy or Federal Policy)'
+        geo = ('38.8951', '-77.0364', '10000mi') # City of Albany
+        if max_id<0:
+            if not since_id:
+                raw_tweets = twitter.search(q=query, geocode=geo, count=100)
+            else:
+                raw_tweets = twitter.search(q=query, geocode=geo, count=100, sinceID=since_id)
+        else:
+            if not since_id:
+                raw_tweets = twitter.search(q=query, geocode=geo, count=100, max_id=str(max_id-1))
+            else:
+                raw_tweets = twitter.search(q=query, geocode=geo, count=100, max_id=str(max_id-1), sinceID=since_id)
+        for i,v in enumerate(raw_tweets['statuses']):
+            data2=v
+            tweet=data2
+            id_list.append(tweet['id'])
+            with open('Project_data.txt','a') as f:
+                f.write(str(tweet['id']))
+                f.write('\n')
+                f.write(tweet['created_at'])
+                f.write('\n')
+                f.write(tweet['user']['screen_name'])
+                f.write('\n')
+                f.write(tweet['text'])
+                f.write('\n')
+            if 'rape' in data2['text']:
+                C=C+1
+            if 'crime' in data2['text']:
+                N=N+1
+                if 'rape' in data2['text']:
+                    B=B+1
+            if 'crime' and ('State Policy' or 'Federal policy') in data2['text']:
+                M=M+1
+                if 'change in crime rate' in data2['text']:
+                    A=A+1
+                    with open('Subset_Project_data.txt','a') as f2:
+                        f2.write(str(tweet['id']))
+                        f2.write('\n')
+                        f2.write(tweet['created_at'])
+                        f2.write('\n')
+                        f2.write(tweet['user']['screen_name'])
+                        f2.write('\n')
+                        f2.write(tweet['text'])
+                        f2.write('\n')
+            count2=count2+1
+        max_id=min([tweet[0] for tweet in raw_tweets])#max(sorted(id_list))
+        #print max_id
+   # print "total number of tweets :", total_tweets
+    print 'Number of D tuples', count2
+    print 'N: ', N
+    print 'M: ', M
+    print 'A: ', A
+    print 'B: ', B
+    print 'C: ', C
+    print 'API Recall: ', float(M/float(N))
+    print 'Quality Precision', float(A/float(M))
+    print 'Quality Recall', float(A/float(A+B+C))
+
+
+data3=dict()
+ # this will give me M
+def rest_query_ex3():
+    count3=0
+    M=0
+    A=0
+    print  "\n"
+    print 'Data for M'
+    print "\n"
+    query = 'crime AND increased OR sexual'
+    geo = ('42.6525', '-73.7572', '100mi') # City of Albany
+    MAX_ID = None
+    #for it in range(2): # Retrieve up to 200 tweets
+    raw_tweets = twitter.search(q=query, geocode=geo, count=1000) #result_type='recent')
+    for i,v in enumerate(raw_tweets['statuses']):
+        data3=v
+        #print_info(data3)
+        if 'crime' and 'increased' in data2['text']:
+            M=M+1
+            if 'sexual' in data2['text']:
+                A=A+1
+        count3=count3+1
+
+
+    #if data3:
+      # MAX_ID = data3['id']
+      # print MAX_ID, len(data3)
+
+def main():
+     #rest_query_ex1()
+   # time.sleep(5)
+
+
+     #N=0
+     rest_query_ex2()
+
+     #time.sleep(2)
+     #M=0
+     #rest_query_ex3()
+     pass
+
+
+if __name__ == '__main__':
+    main()
+#try:
+ #   twitter.create_friendship(screen_name=target, follow="true")
+#except TwythonError as e:
+#    print(e)

@@ -1,0 +1,14 @@
+10000
+ total_tweets_train.txt has been created
+
+Number of Unique Words from the tweets based on "text items"
+14526
+
+Vocabulary
+{'and': 0, 'va': 1, 'via': 2, 'san': 3, 'mexico': 4, 'is': 5, 'ir': 6, 'pri': 7, 'televisa': 8, 'ciudad': 20, 'vs': 10, 'at': 11, 'mejor': 12, 'in': 13, 'tan': 14, 'todo': 15, 'as': 56, 'ser': 17, 'city': 19, 'est': 21, 'ver': 22, 'for': 23, 'favor': 25, 'pues': 62, 'vez': 26, 'live': 30, 'nacional': 28, 'to': 24, 'bien': 27, 'pena': 31, 'eso': 33, 'amlo': 34, 'you': 35, 'las': 49, 'los': 29, 'hoy': 38, 'solo': 39, 'mas': 40, 'march': 41, 'that': 42, 'da': 43, 'from': 46, 'que': 44, 'new': 45, 'van': 32, 'nieto': 16, 'son': 48, 'nos': 36, 'on': 50, 'marcha': 51, 'qu': 52, 'salvador': 53, 'be': 47, 'of': 55, 'protest': 9, 'su': 57, 'sin': 37, 'epn': 58, 'this': 54, 'si': 59, 'del': 60, 'ms': 61, 'the': 63, 'con': 65, 'my': 64, 'are': 18}
+
+Cross-Validation Accuracy
+0.771538461538
+
+ QUIZ_DM_Predictions_LogR.txt has been created
+QUIZ_DM_Predictions_unlabeled_tweets_LogR.txt has been create

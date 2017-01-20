@@ -1,0 +1,19 @@
+/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7 /Users/manasgaur/Desktop/MyApp/Multiprocessing/HW_3A/HW3-A-1.py
+5
+4
+**********Result of HW3-A-Question1**********
+API_RECALL 0.666666666667
+Quality Precision 0.5
+Quality Recall 0.5
+
+Process finished with exit code 0
+
+/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7 /Users/manasgaur/Desktop/MyApp/Multiprocessing/HW_3A/HW3-A-2.py
+6
+3
+**********Result of HW3-A-Question2**********
+API_RECALL 0.428571428571
+Quality Precision 0.333333333333
+Quality Recall 0.25
+
+Process finished with exit code 0
